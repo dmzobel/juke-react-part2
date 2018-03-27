@@ -8,7 +8,7 @@ export default function AlbumView(props) {
   const albums = props.albums;
 
   return (
-    <div className="row">
+    <div className="row col-xs-10">
       {albums.map(album => (
         <div className="col-xs-4" key={album.id}>
           <Link className="thumbnail" to={`/albums/${album.id}`}>

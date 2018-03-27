@@ -50,7 +50,6 @@ export default class SingleArtist extends Component {
             <Link to={`/artists/${artist.id}/songs`}>SONGS</Link>
           </li>
         </ul>
-        {/* Routes will go here! */}
         <Route
           path={`/artists/${artist.id}/albums`}
           render={() => <AlbumView albums={this.state.albums} />}
@@ -65,13 +64,27 @@ export default class SingleArtist extends Component {
 }
 
 // <div className="col-xs-10">
-//   <h3>{this.state.artist.name}</h3>
-//   <div>
-//     <h4>Albums</h4>
-//     <AlbumView albums={this.state.albums} />
+//   <h4>Albums</h4>
+//   <div className="row">
+//     {this.state.albums.map(album => (
+//       <div className="col-xs-4" key={album.id}>
+//         <Link
+//           className="thumbnail"
+//           to={`/artists/${artist.id}/${album.id}/songs`}
+//         >
+//           <img src={album.imageUrl} />
+//           <div className="caption">
+//             <h5>
+//               <span>{album.name}</span>
+//             </h5>
+//             <small>{album.songs.length} songs</small>
+//           </div>
+//         </Link>
+//       </div>
+//     ))}
 //   </div>
-//   <div>
-//     <h4>Songs</h4>
-//     <Songs songs={this.state.songs} />
-//   </div>
+//   <Route
+//     path={`/artists/${artist.id}/${album.id}/songs`}
+//     render={() => <Songs songs={this.state.songs} />}
+//   />
 // </div>
