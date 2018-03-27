@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+import { Link } from 'react-router-dom'
+import AllAlbums from './AllAlbums'
+import Songs from './Songs'
+import AlbumView from './AlbumView'
 
 export default class SingleArtist extends Component {
   constructor(props){
@@ -31,9 +34,15 @@ export default class SingleArtist extends Component {
   render() {
     return (
       <div>
-        <h3>ARTIST NAME</h3>
-        <h4>ALBUMS</h4>
-        <h4>SONGS</h4>
+      <h3>{this.state.artist.name}</h3>
+        <div>
+          <h4>ALBUMS</h4>
+          <AlbumView albums={this.state.albums} />
+        </div>
+        <div>
+          <h4>Songs</h4>
+          <Songs songs={this.state.songs} />
+        </div>
       </div>
     )
   }
