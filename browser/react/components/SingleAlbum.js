@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Songs from '../components/Songs';
 import axios from 'axios';
+import { Link } from 'react-router-dom'
+import Mailto from 'react-mailto'
 
 export default class SingleAlbum extends Component {
   constructor (props) {
@@ -37,7 +39,17 @@ export default class SingleAlbum extends Component {
     return (
       <div className="album">
         <div>
-          <h3>{ album.name }</h3>
+          <h3>{ album.name }
+            <button className="btn btn-default btn-xs">
+              <Mailto email='' headers={{
+                subject: `Fire beats from ${album.name}`
+
+              }}
+                 obfuscate={true} >
+                <span className="glyphicon glyphicon-envelope" />
+              </Mailto>
+            </button>
+          </h3>
           <img src={ album.imageUrl } className="img-thumbnail" />
         </div>
         <Songs songs={album.songs} />
